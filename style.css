@@ -94,17 +94,17 @@ footer a:hover {
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    position: relative;
     border: 5px solid orangered;
 }
 
 .shop-item .content {
-    padding: 10px;
+    padding: 50px 20px 10px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
     flex-grow: 1;
+    position: relative;
 }
 
 .shop-item img {
@@ -131,15 +131,15 @@ footer a:hover {
     margin-top: auto;
 }
 
-.shop-item .tags {
+.shop-item .notes {
     position: absolute;
     top: 10px;
-    right: 10px;
+    left: 10px;
     display: flex;
     gap: 10px;
 }
 
-.shop-item .tag {
+.shop-item .note {
     background: var(--yellow);
     border-radius: 4px;
     padding: 4px 8px;

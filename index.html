@@ -35,6 +35,17 @@
     </nav>
   </header>
   <main class="container">
+    <div class="filters">
+      <div class="filters-sort">
+        <label for="sort">Сортировка:</label>
+        <select name="sort" id="sort">
+          <option value="alphabet">По алфавиту</option>
+          <option value="expensive">Сначала дорогие</option>
+          <option value="cheap">Сначала дешевые</option>
+          <option selected value="intensity">Интенсивность</option>
+        </select>
+      </div>
+    </div>
     <section id="shop-items">
     </section>
     <p id="nothing-found"></p>
@@ -50,10 +61,10 @@
         <div class="notes"></div>
 
         <p></p>
-        <span class="collection"></span>
-        <span class="fragrance"></span>
-        <span class="price">Цена:</span>
-        <span class="intensity"></span>
+        <span class="collection">Коллекция: <span></span></span>
+        <span class="fragrance">Ноты: <span></span></span>
+        <span class="price">Цена: <span></span></span>
+        <span class="intensity">Интенсивность: <span></span></span>
       </div>
     </div>
   </template>
