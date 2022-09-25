@@ -214,17 +214,23 @@ function searchCard() {
 
     // ищем все товары, в title которых есть searchString
     // объединяб элементы массива в строку
-    let strNotes = notes.join('');
-    searchMatch = candles.filter((element) =>
-        element.title.toLocaleLowerCase().includes(searchString) || element.collection.toLocaleLowerCase().includes(searchString) || element.strNotes.toLocaleLowerCase().includes(searchString)
-    );
+
+    searchMatch = candles.filter((element) => {
+        const strNotes = element.notes.join("");
+        return (
+            element.title.toLocaleLowerCase().includes(searchString) ||
+            element.collection.toLocaleLowerCase().includes(searchString) ||
+            strNotes.toLocaleLowerCase().includes(searchString)
+        );
+    });
+
     // Сортируем по интенсивности аромата (сортировка по умолчанию)
     searchMatch.sort((a, b) => b.intensity - a.intensity);
 
     // Отрисовываем результаты поиска
     addСard(searchMatch);
     // По умолчанию сортировка "по интенсивности"
-    searchMatch.selectedIndex = 3;
+    sortControl.selectedIndex = 3;
 
 }
 
@@ -283,3 +289,22 @@ function sortByAlphabet(a, b) {
     // Если они равны
     return 0;
 }
+
+// поиск по клику ноты свечи
+//function searchNote() {
+
+candles.forEach((candle) => {
+    const note = candle.notes.join("");
+    return (
+
+        note.toLocaleLowerCase().includes(searchString)
+    );
+    addCard(note);
+
+})
+
+
+
+// обработчик события при клике на ноту
+const clickNote = document.querySelector('.note');
+clickNote.addEventListener("click", searchNote);
